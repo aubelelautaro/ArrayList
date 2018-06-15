@@ -370,7 +370,7 @@ void* al_pop(ArrayList* this,int index)
     if (this != NULL && index >= 0 && index < this->len(this))
     {
         returnAux = *(this->pElements + index);
-        return returnAux;
+        al_remove(this,index);
     }
 
     return returnAux;
