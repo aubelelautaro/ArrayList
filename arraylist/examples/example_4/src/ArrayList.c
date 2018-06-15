@@ -462,12 +462,12 @@ int al_sort(ArrayList* this, int (*pFunc)(void* ,void*), int order)
             {
                 for (j=i+1;j<this->size;j++)
                 {
-                    if(order==1 && pFunc(this->pElements[i],this->pElements[j])== 1)
+                    if(order==1 && pFunc(*(this->pElements+i),*(this->pElements+j))== 1)
                     {
                         auxElement=this->pElements[i];
                         this->pElements[i]=this->pElements[j];
                         this->pElements[j]=auxElement;
-                    }else if (order==0 && pFunc(this->pElements[i],this->pElements[j])== -1)
+                    }else if (order==0 && pFunc(*(this->pElements+i),*(this->pElements+j))== -1)
                     {
                         auxElement=this->pElements[i];
                         this->pElements[i]=this->pElements[j];
